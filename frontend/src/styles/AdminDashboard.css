@@ -1,0 +1,201 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.admin-dash {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f6f9;
+}
+
+/* Top Bar (Header) */
+.dash-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #1e293b;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dash-header .admin-logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dash-header h1 {
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+}
+
+/* Sidebar */
+nav {
+  position: fixed;
+  top: 60px; /* Starts just below the header */
+  left: 0;
+  width: 240px;
+  height: calc(100vh - 60px);
+  background: #2d3748;
+  color: white;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease-in-out;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+nav ul li:hover {
+  background: #4a5568;
+}
+
+nav ul li:active {
+  background: #1e293b;
+}
+
+nav ul li:last-child {
+  margin-top: auto;
+  background: #473636;
+  text-align: center;
+  font-weight: bold;
+}
+
+nav ul li:last-child:hover {
+  background: #c53030;
+}
+
+/* Main Content Area */
+.admin-dashboard-main {
+  margin-left: 240px; /* Default: Pushes content to the right of sidebar */
+  margin-top: 60px; /* Push content below the top bar */
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Adjust when sidebar is collapsed */
+.admin-dashboard-main.centered {
+  margin-left: 60px; /* Shrinks when sidebar is collapsed */
+}
+
+/* Overview Section */
+.admin-overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.admin-overview h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2d3748;
+}
+
+/* Card Layout for Dashboard Stats */
+.admin-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px; /* Prevents content from stretching too wide */
+}
+
+.admin-overview-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.admin-overview-card h3 {
+  font-size: 18px;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.admin-overview-card p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #4a5568;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .admin-dashboard-main {
+    margin-left: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    width: 200px;
+  }
+
+  .admin-dashboard-main {
+    margin-left: 200px;
+  }
+
+  .admin-overview-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    width: 180px;
+  }
+
+  .admin-dashboard-main {
+    margin-left: 180px;
+  }
+
+  .dash-header {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  .dash-header h1 {
+    font-size: 16px;
+  }
+
+  .admin-overview h2 {
+    font-size: 20px;
+  }
+
+  .admin-overview-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

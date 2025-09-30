@@ -1,0 +1,120 @@
+.project-progress-updates {
+    padding: 40px 20px;
+    background-color: #f5f7fa;
+    font-family: 'Arial', sans-serif;
+    margin-top: 80px; /* Added margin-top to push the content below the header */
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #4CAF50;
+    padding: 20px 20px; /* Adjusted padding */
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 28px;
+  }
+  
+  .funding-progress {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .funding-progress h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .progress-container {
+    background-color: #e1e1e1;
+    border-radius: 10px;
+    height: 30px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .progress-bar {
+    background-color: #4CAF50;
+    height: 100%;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    line-height: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .progress-text {
+    font-size: 14px;
+  }
+  
+  .funding-summary p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .milestones {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .milestones h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .milestone-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .milestone-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .milestone-item:last-child {
+    border-bottom: none;
+  }
+  
+  .milestone-item .milestone-details h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .milestone-item .milestone-details p {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .milestone-item .milestone-status {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .milestone-item.completed .milestone-status {
+    background-color: #4CAF50;
+  }
+  
+  .milestone-item.in-progress .milestone-status {
+    background-color: #ffa500;
+  }
+  

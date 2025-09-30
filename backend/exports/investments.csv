@@ -1,0 +1,4 @@
+"id","investor_name","amount","investment_date","payout_status","investment_approval_status","roi_percentage","expected_return","actual_return","property_title"
+1,"Ronnie Onyiego","25000.00","2025-03-09T11:59:15.000Z","paid","approved","12.00","19424.00",,"Property A"
+2,"Ronnie Onyiego","40000.00","2025-03-13T19:48:35.000Z","pending","approved","6.00","42400.00",,"Property B"
+3,"Ronnie Onyiego","42000.00","2025-03-21T23:30:03.000Z","pending","approved","4.00","43680.00",,"Property C"

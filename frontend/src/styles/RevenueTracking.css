@@ -1,0 +1,56 @@
+.revenue-tracking-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: center;
+    max-width: 100%;
+}
+
+.revenue-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Using Flexbox for row layout */
+.revenue-grid {
+    display: flex;
+    justify-content: space-around;  /* Even spacing */
+    align-items: stretch;  /* Make all cards equal height */
+    gap: 15px;
+    flex-wrap: wrap;  /* Allows wrapping on smaller screens */
+}
+
+.revenue-card {
+    flex: 1; /* Makes cards evenly distributed */
+    min-width: 250px;
+    max-width: 300px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.revenue-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.revenue-loading,
+.revenue-error {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff5c5c;
+    text-align: center;
+    margin-top: 10px;
+}

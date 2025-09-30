@@ -1,0 +1,100 @@
+/* PortfolioOverview.css */
+
+/* Root variables for consistent theming */
+:root {
+  --primary-color: #3498db; /* Calming blue hue */
+  --secondary-color: #2c3e50; /* Dark slate for text */
+  --background-color: #ecf0f1; /* Light gray background */
+  --card-background: #ffffff; /* Pure white card background */
+  --accent-color: #e74c3c; /* Vibrant red for accents */
+  --border-radius: 12px; /* Smooth rounded corners */
+  --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  --font-family: 'Roboto', sans-serif; /* Modern, clean font */
+}
+
+/* Container styling */
+.portfolio-overview {
+  background-color: var(--background-color);
+  padding: 50px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  font-family: var(--font-family);
+  max-width: 700px;
+  margin: 30px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-overview:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Header styling */
+.portfolio-overview h3 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+}
+
+/* Loading and error messages */
+.portfolio-overview p {
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 1.1em;
+}
+
+.portfolio-overview .error {
+  color: var(--accent-color);
+}
+
+/* Summary section styling */
+.portfolio-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.portfolio-summary p {
+  background-color: var(--card-background);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-summary p:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.portfolio-summary p strong {
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+}
+
+.portfolio-summary p:hover strong {
+  color: #fff;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+  .portfolio-overview {
+    padding: 20px;
+  }
+
+  .portfolio-summary p {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .portfolio-summary p strong {
+    margin-bottom: 8px;
+  }
+}

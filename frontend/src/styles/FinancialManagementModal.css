@@ -1,0 +1,28 @@
+.financial-management-container {
+    padding: 20px;
+  }
+  
+  .financial-section {
+    margin-bottom: 15px;
+  }
+  
+  .financial-section h3 {
+    margin-bottom: 10px;
+  }
+  
+  .financial-download-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .financial-download-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .error {
+    color: red;
+  }
+  

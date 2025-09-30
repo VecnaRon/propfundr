@@ -1,0 +1,130 @@
+.owner-communication {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .messaging-container {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 450px; /* Adjust height as needed */
+  }
+  
+  .owner-list {
+    width: 30%;
+    background: #f4f4f4;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+  }
+  
+  .owner-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .owner-list li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .owner-list li:hover {
+    background: #ddd;
+  }
+  
+  .message-box {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: #fff;
+  }
+  
+  .messages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #aaa transparent;
+    max-height: 380px;
+  }
+  
+  /* Scrollbar Styling */
+  .messages::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .messages::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 5px;
+  }
+  
+  .message {
+    max-width: 75%;
+    padding: 10px;
+    border-radius: 12px;
+    word-wrap: break-word;
+    position: relative;
+    font-size: 14px;
+  }
+  
+  /* Investor messages on the right */
+  .message.investor {
+    align-self: flex-end;
+    background: #e1f5fe;
+    text-align: right;
+    border-top-right-radius: 0;
+  }
+  
+  /* Owner messages on the left */
+  .message.owner {
+    align-self: flex-start;
+    background: #c8e6c9;
+    text-align: left;
+    border-top-left-radius: 0;
+  }
+  
+  /* Message sender name */
+  .message strong {
+    display: block;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 3px;
+  }
+  
+  /* Input section */
+  .message-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+  
+  .message-input input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .message-input button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .message-input button:hover {
+    background: #0056b3;
+  }
+  

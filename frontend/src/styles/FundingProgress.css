@@ -1,0 +1,54 @@
+.funding-progress {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .funding-overview p,
+  .milestones ul,
+  .recent-contributions ul {
+    margin: 10px 0;
+  }
+  
+  .funding-bar {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+  
+  .funding-bar-progress {
+    height: 100%;
+    background-color: #4caf50;
+  }
+  
+  .milestones,
+  .recent-contributions {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .milestones ul,
+  .recent-contributions ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .milestones li,
+  .recent-contributions li {
+    margin: 5px 0;
+  }
+  
+  .projected-roi,
+  .time-left {
+    margin-top: 20px;
+  }
+  
+  h2, h3 {
+    color: #333;
+  }
+  

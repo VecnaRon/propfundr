@@ -1,0 +1,28 @@
+.financial-reports {
+    padding: 20px;
+  }
+  
+  .summary-overview {
+    margin-bottom: 30px;
+  }
+  
+  .summary-overview h3 {
+    margin-bottom: 10px;
+  }
+  
+  .detailed-report table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .detailed-report th, .detailed-report td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+  

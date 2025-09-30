@@ -1,0 +1,107 @@
+.document-management-container {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px; /* Increased modal width */
+    max-height: 600px; /* Increased height */
+    overflow-y: auto; /* Allows scrolling if content overflows */
+    margin: 0 auto;
+  }
+  
+  .document-management-container p {
+    text-align: center;
+    color: #333;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+    max-height: 400px; /* Makes the table scrollable if needed */
+  }
+  
+  .document-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .document-table th,
+  .document-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .document-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  
+  .document-table td {
+    white-space: nowrap;
+  }
+  
+  .view-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  
+  .view-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  .upload-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .upload-section input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .upload-section button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .upload-section button:hover {
+    background-color: #218838;
+  }
+  

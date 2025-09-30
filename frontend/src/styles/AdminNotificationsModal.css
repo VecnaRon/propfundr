@@ -1,0 +1,159 @@
+/* 🔹 Modal Overlay */
+.admin-notif-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 8, 8, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* 🔹 Modal Box */
+.admin-notif-modal {
+  background: #fff;
+  width: 420px;
+  max-width: 90%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 🔹 Modal Header */
+.admin-notif-modal h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* 🔹 Notifications List */
+.admin-notif-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 280px;
+  overflow-y: auto;
+  border-radius: 5px;
+  background: #fff; /* Keep background uniform */
+}
+
+/* 🔹 Notification Item - Make All Backgrounds Consistent */
+.admin-notif-item {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  background: #ffffff !important;  /* Force white background */
+  transition: background 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #333 !important; /* Ensure text is visible */
+}
+
+/* 🔹 Last Notification - Stop the Darkness */
+.admin-notif-item:last-child {
+  border-bottom: none;
+  background: #ffffff !important;  /* Force last item to stay white */
+}
+
+/* 🔹 Unread Notification - Fix the Issue */
+.admin-unread-notif {
+  background: #ffebeb !important;  /* Soft red for unread */
+  border-left: 4px solid #dc3545;
+}
+
+/* 🔹 Hover Fix - No Weird Red */
+.admin-notif-item:hover {
+  background: #f1f1f1 !important; /* Soft gray */
+  color: #333 !important; /* Ensure text is still visible */
+}
+
+/* 🔹 Fix Notification Message (Ensure Normal Weight) */
+.admin-notif-item p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal !important;  /* Make sure it's not bold */
+  color: #333 !important;
+  word-wrap: break-word;
+}
+
+/* 🔹 Fix Small Text Below (Ensure Normal Weight) */
+.admin-notif-item small {
+  font-size: 12px;
+  font-weight: normal !important;  /* Prevent bold */
+  color: #666 !important;
+  text-align: right;
+  display: block;
+}
+
+
+/* 🔹 Modal Actions */
+.admin-notif-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* 🔹 Buttons */
+.admin-notif-actions button {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: 0.3s ease-in-out;
+}
+
+/* 🔹 "Mark All as Read" Button */
+.admin-notif-actions button:first-child {
+  background: #007bff;
+  color: white;
+}
+
+.admin-notif-actions button:first-child:hover {
+  background: #0056b3;
+}
+
+/* 🔹 "Close" Button */
+.admin-notif-actions button:last-child {
+  background: #ccc;
+}
+
+.admin-notif-actions button:last-child:hover {
+  background: #999;
+}
+
+/* 🔹 Scrollbar Styling */
+.admin-notif-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.admin-notif-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.admin-notif-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.admin-notif-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* 🔹 Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,87 @@
+.withdrawal-container {
+    max-width: 420px;
+    background: #ffffff;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+  }
+  
+  .withdrawal-container h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .withdrawal-container p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .withdrawal-container strong {
+    color: #27ae60;
+    font-size: 18px;
+  }
+  
+  .withdrawal-container div {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .withdrawal-container label {
+    font-weight: 500;
+    color: #444;
+    display: block;
+    margin-bottom: 6px;
+  }
+  
+  .withdrawal-container input,
+  .withdrawal-container select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .withdrawal-container input:focus,
+  .withdrawal-container select:focus {
+    outline: none;
+    border-color: #27ae60;
+    box-shadow: 0 0 6px rgba(39, 174, 96, 0.3);
+  }
+  
+  .withdrawal-container button {
+    width: 100%;
+    padding: 12px;
+    background: #27ae60;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+  }
+  
+  .withdrawal-container button:hover {
+    background: #219150;
+  }
+  
+  .withdrawal-container button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+  }
+  
+  .withdrawal-container p.message {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #e74c3c;
+  }
+  

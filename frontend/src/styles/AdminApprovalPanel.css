@@ -1,0 +1,184 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .approval-panel {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Table styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  th {
+    background: #007bff;
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background: #f2f2f2;
+  }
+  
+  tr:hover {
+    background: #ddd;
+  }
+  
+  /* Button styles */
+  button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .view-btn {
+    background: #17a2b8;
+    color: white;
+  }
+  
+  .view-btn:hover {
+    background: #138496;
+  }
+  
+  .approve {
+    background: #28a745;
+    color: white;
+    margin-right: 5px;
+  }
+  
+  .approve:hover {
+    background: #218838;
+  }
+  
+  .reject {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .reject:hover {
+    background: #c82333;
+  }
+  
+  /* MODAL STYLES */
+  .kmodal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .kmodal {
+    background: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px; /* Increased max-width for better display */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow-y: auto;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Make modal content scrollable if necessary */
+  .kmodal::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .kmodal::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
+  
+  .kmodal::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  .kclose-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  .kclose-modal:hover {
+    color: red;
+  }
+  
+  h3 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Ensure User Details Section is Properly Displayed */
+  .kmodal p {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 14px;
+    word-wrap: break-word;
+  }
+  
+  /* Document Section */
+  .kdocument-section {
+    width: 100%;
+    text-align: center;
+    margin: 15px 0;
+  }
+  
+  /* Image Styles */
+  .kyc-image {
+    width: 100%;
+    max-width: 400px; /* Increased max-width for full visibility */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 10px auto;
+    border: 1px solid #ddd;
+    object-fit: contain; /* Ensures full visibility of the image */
+  }
+  
+  /* Error Message */
+  .error {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+  }
+  

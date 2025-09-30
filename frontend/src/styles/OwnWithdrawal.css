@@ -1,0 +1,38 @@
+.withdraw-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .withdraw-input,
+  .withdraw-select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .withdraw-button,
+  .cancel-button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  
+  .withdraw-button {
+    background: #28a745;
+    color: white;
+    border: none;
+  }
+  
+  .cancel-button {
+    background: #dc3545;
+    color: white;
+    border: none;
+  }
+  

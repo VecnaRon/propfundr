@@ -1,0 +1,79 @@
+/* DocumentManagement.css */
+.document-management {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .upload-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .upload-section input[type="file"] {
+    margin-bottom: 10px;
+  }
+  
+  .file-preview {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .file-preview img {
+    max-width: 100px;
+  }
+  
+  textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  input[type="text"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+  }
+  
+  .document-list {
+    margin-top: 30px;
+  }
+  
+  .document-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .document-item a {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .document-item button {
+    margin-left: 10px;
+    background-color: #f44336;
+  }
+  
+  .document-item button:disabled {
+    background-color: #ccc;
+  }
+  

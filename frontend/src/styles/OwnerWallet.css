@@ -1,0 +1,141 @@
+/* Owner Wallet Styles */
+.wallet-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* Wallet Title */
+.wallet-title {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #34495e;
+  margin-top: 25px;
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 5px;
+}
+
+/* Wallet Info */
+.wallet-container p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Buttons Container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Deposit & Withdraw Buttons */
+.owndeposit-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  text-transform: uppercase;
+  width: 120px;  /* Reduced width */
+  text-align: center;
+}
+.ownwithdraw-button{
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  text-transform: uppercase;
+  width: 120px;  /* Reduced width */
+  text-align: center;
+}
+
+.deposit-button {
+  background: #27ae60;
+  color: white;
+}
+
+.withdraw-button {
+  background: #e74c3c;
+  color: white;
+}
+
+.deposit-button:hover {
+  background: #2ecc71;
+}
+
+.withdraw-button:hover {
+  background: #c0392b;
+}
+
+/* Transactions Filter */
+.filter-select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+/* Transactions Table */
+.transactions-table {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.transactions-table th {
+  background: #2c3e50;
+  color: white;
+}
+
+.transactions-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.transactions-table tr:hover {
+  background: #f1f1f1;
+}
+
+/* Status Styling */
+.status-approved {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.status-rejected {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+/* No Transactions Message */
+.no-transactions {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+}

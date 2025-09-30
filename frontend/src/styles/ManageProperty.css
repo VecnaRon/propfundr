@@ -1,0 +1,171 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Main Manage Property Wrapper */
+.manage-property {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 20px;
+}
+
+/* Header Section */
+.manage-property h1 {
+  font-size: 2rem;
+  color: #2d3748;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Property Details Section */
+.property-details,
+.funding-progress,
+.property-documents,
+.investors {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fafbfc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.property-details h2,
+.funding-progress h2,
+.property-documents h2,
+.investors h2 {
+  font-size: 1.5rem;
+  color: #2b6cb0;
+  margin-bottom: 15px;
+}
+
+/* Property Details */
+.property-details p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.property-details p strong {
+  color: #2d3748;
+}
+
+/* Funding Progress */
+.funding-progress p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.funding-progress p strong {
+  color: #2d3748;
+}
+
+.funding-progress .progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.funding-progress .progress-bar span {
+  display: block;
+  height: 100%;
+  background-color: #4caf50;
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+/* Button */
+button {
+  background-color: #4caf50;
+  color: white;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Investor and Document Sections */
+.property-documents,
+.investors {
+  display: flex;
+  justify-content: space-between;
+}
+
+.property-documents ul,
+.investors ul {
+  list-style: none;
+}
+
+.property-documents li,
+.investors li {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Loading and Error States */
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #e53e3e;
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .manage-property {
+    padding: 20px;
+  }
+
+  .property-details,
+  .funding-progress,
+  .property-documents,
+  .investors {
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+
+  .property-details p {
+    font-size: 0.95rem;
+  }
+
+  .funding-progress p {
+    font-size: 0.95rem;
+  }
+
+  .property-documents ul,
+  .investors ul {
+    padding-left: 20px;
+  }
+
+  .property-documents li,
+  .investors li {
+    font-size: 0.95rem;
+  }
+}

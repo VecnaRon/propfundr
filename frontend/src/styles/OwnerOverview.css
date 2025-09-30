@@ -1,0 +1,112 @@
+/* Dark Theme Container */
+.owner-overview {
+  max-width: 1100px;
+  margin: 10px auto;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.owner-overview:hover {
+  transform: translateY(-5px);
+}
+
+/* Header Styling */
+.owner-overview h3 {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  color: #00d4ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+/* Cards Layout - Now Horizontal */
+.overview-summary {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+/* Individual Card Style */
+.overview-card {
+  flex: 1;
+  min-width: 280px;
+  padding: 18px;
+  background: linear-gradient(135deg, rgba(30, 144, 255, 0.2), rgba(0, 212, 255, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.overview-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Text */
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-value {
+  font-size: 22px;
+  font-weight: 600;
+  color: #00d4ff;
+}
+
+/* Error Message */
+.error {
+  color: #ff4d4d;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .overview-summary {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .overview-card {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .owner-overview {
+    padding: 20px;
+  }
+
+  .owner-overview h3 {
+    font-size: 24px;
+  }
+
+  .overview-card {
+    padding: 16px;
+  }
+
+  .card-title {
+    font-size: 14px;
+  }
+
+  .card-value {
+    font-size: 20px;
+  }
+}

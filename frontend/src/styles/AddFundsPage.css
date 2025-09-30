@@ -1,0 +1,105 @@
+/* Modern Styling for Add Funds Page */
+.add-funds-page {
+    display: flex;
+    justify-content: flex-start; /* Moves container up */
+    align-items: center;
+    min-height: 100vh;
+    background: #eef1f6;
+    padding: 60px 20px 20px; /* Adjusted spacing */
+    flex-direction: column;
+}
+
+.add-funds-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    max-width: 360px; /* Smaller width */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.add-funds-container h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering inputs */
+    width: 90%; /* Reduced width */
+    margin-bottom: 12px;
+}
+
+.input-group label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 6px;
+    text-align: left;
+    width: 100%;
+}
+
+.input-group input,
+.input-group select {
+    width: 80%; /* Adjusted input width */
+    padding: 10px; /* Reduced height */
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #0056b3;
+    background: white;
+    outline: none;
+    box-shadow: 0 0 6px rgba(0, 86, 179, 0.2);
+}
+
+.add-funds-container button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 8px;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.add-funds-container button:hover {
+    background: linear-gradient(135deg, #0056b3, #004494);
+    transform: scale(1.02);
+}
+
+.add-funds-container button:disabled {
+    background: #a0a0a0;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: #d9534f;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 10px;
+    text-align: center;
+    animation: fadeIn 0.2s ease-in-out;
+}

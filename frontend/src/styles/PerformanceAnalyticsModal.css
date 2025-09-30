@@ -1,0 +1,107 @@
+.performance-analytics-container {
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+  }
+  
+  /* Modal Header: Title & Close Button */
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.4rem;
+    color: #222;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #444;
+  }
+  
+  .close-btn:hover {
+    color: #ff4d4d;
+  }
+  
+  /* FLEXBOX FIX: Force Sections Side-by-Side */
+  .analytics-section-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  /* Make Each Section 48% to fit 2 in a Row */
+  .analytics-section {
+    flex: 1 1 48%;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    min-width: 300px;
+  }
+  
+  .analytics-section h3 {
+    margin-bottom: 8px;
+    color: #007bff;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+  }
+  
+  .analytics-section p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 0.95rem;
+  }
+  
+  strong {
+    color: #222;
+  }
+  
+  /* Center the Download Button Below */
+  .download-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .download-report-btn {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .download-report-btn:hover {
+    background: #0056b3;
+  }
+  
+  /* Responsive: Stack Sections on Mobile */
+  @media (max-width: 768px) {
+    .analytics-section-container {
+      flex-direction: column;
+    }
+  
+    .analytics-section {
+      width: 100%;
+    }
+  }
+  

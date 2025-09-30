@@ -1,0 +1,33 @@
+.investment-history {
+    padding: 20px;
+  }
+  
+  .earnings-overview {
+    margin-bottom: 20px;
+  }
+  
+  .investment-details table, .transaction-history table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .investment-details th, .transaction-history th,
+  .investment-details td, .transaction-history td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  h3 {
+    margin-top: 20px;
+    font-size: 1.5em;
+  }
+  
+  table th {
+    background-color: #f2f2f2;
+  }
+  
+  table td {
+    background-color: #fafafa;
+  }
+  
