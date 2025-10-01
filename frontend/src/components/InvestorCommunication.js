@@ -93,7 +93,7 @@ const token = sessionStorage.getItem("token");
     setIsLoadingMessages(true)
     setError(null)
     try {
-      const response = await axios.get(`http://192.168.100.30:5000/api/messages/owner/${selectedInvestor.id}`, {
+      const response = await axios.get(`/messages/owner/${selectedInvestor.id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -120,7 +120,7 @@ const token = sessionStorage.getItem("token");
     setIsLoadingInvestors(true)
     setError(null)
     try {
-      const response = await axios.get("http://192.168.100.30:5000/api/investors", {
+      const response = await axios.get("/investors", {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -150,7 +150,7 @@ const token = sessionStorage.getItem("token");
     if (!newMessage || !selectedInvestor) return
     try {
       const response = await axios.post(
-        "http://192.168.100.30:5000/api/messages",
+        "/messages",
         { receiverId: selectedInvestor.id, message: newMessage },
         { headers: { Authorization: `Bearer ${token}` } },
       )

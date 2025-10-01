@@ -48,7 +48,7 @@ const AddFundsPage = () => {
     try {
    const token = sessionStorage.getItem("token");
       const response = await axios.post(
-        "http://192.168.100.30:5000/api/wallet/deposit/paypal",
+        "/wallet/deposit/paypal",
         { amount: parseFloat(amount) },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -70,7 +70,7 @@ const AddFundsPage = () => {
     try {
       const token = sessionStorage.getItem("token");
       const response = await axios.post(
-        "http://192.168.100.30:5000/api/wallet/deposit/capture",
+        "/wallet/deposit/capture",
         { orderId: orderID },
         { headers: { Authorization: `Bearer ${token}` } }
       );

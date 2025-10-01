@@ -103,13 +103,13 @@ const token = sessionStorage.getItem("token");
     const fetchData = async () => {
       try {
         const [projectRes, returnRes, walletRes] = await Promise.all([
-          axios.get("http://192.168.100.30:5000/api/projects", {
+          axios.get("/projects", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get("http://192.168.100.30:5000/api/returns", {
+          axios.get("/returns", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get("http://192.168.100.30:5000/api/owner-wallet", {
+          axios.get("/owner-wallet", {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ])
@@ -158,7 +158,7 @@ const token = sessionStorage.getItem("token");
       setIsSubmitting(true)
 
       await axios.post(
-        "http://192.168.100.30:5000/api/returns",
+        "/returns",
         {
           project_id: selectedProject,
           amount: Number.parseFloat(amount),
@@ -170,10 +170,10 @@ const token = sessionStorage.getItem("token");
 
       // Refresh data
       const [returnRes, walletRes] = await Promise.all([
-        axios.get("http://192.168.100.30:5000/api/returns", {
+        axios.get("/returns", {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        axios.get("http://192.168.100.30:5000/api/owner-wallet", {
+        axios.get("/owner-wallet", {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ])

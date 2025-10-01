@@ -15,7 +15,7 @@ const RevenueTracking = () => {
     const fetchRevenueData = async () => {
       try {
        const token = sessionStorage.getItem("token");
-        const response = await fetch("http://192.168.100.30:5000/api/revenue-tracking", {
+        const response = await fetch("/revenue-tracking", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

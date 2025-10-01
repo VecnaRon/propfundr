@@ -89,7 +89,7 @@ const PlatformEarnings = () => {
   const fetchEarnings = async () => {
     setLoading(true)
     try {
-      const response = await fetch("http://192.168.100.30:5000/api/admin/platform-earnings", {
+      const response = await fetch("/admin/platform-earnings", {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
 

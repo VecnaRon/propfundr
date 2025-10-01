@@ -77,7 +77,7 @@ const PropertyManagement = () => {
     setIsLoading(true)
     try {
    const token = sessionStorage.getItem("token");
-      const response = await axios.get("http://192.168.100.30:5000/api/admin/properties", {
+      const response = await axios.get("/admin/properties", {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -102,7 +102,7 @@ const PropertyManagement = () => {
     try {
       const token = sessionStorage.getItem("token");
       await axios.post(
-        `http://192.168.100.30:5000/api/admin/properties/${propertyId}/approve`,
+        `/admin/properties/${propertyId}/approve`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -148,7 +148,7 @@ const PropertyManagement = () => {
     try {
     const token = sessionStorage.getItem("token");
       await axios.post(
-        `http://192.168.100.30:5000/api/admin/properties/${selectedProperty.propertyId}/reject`,
+        `/admin/properties/${selectedProperty.propertyId}/reject`,
         { reason: rejectionReason },
         { headers: { Authorization: `Bearer ${token}` } },
       )
@@ -183,7 +183,7 @@ const PropertyManagement = () => {
   const handleDelete = async () => {
     try {
      const token = sessionStorage.getItem("token");
-      await axios.delete(`http://192.168.100.30:5000/api/admin/properties/${propertyToDelete.propertyId}`, {
+      await axios.delete(`/admin/properties/${propertyToDelete.propertyId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       onDeleteDialogClose()

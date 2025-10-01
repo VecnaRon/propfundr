@@ -119,7 +119,7 @@ const ActiveProjects = () => {
 
   const fetchProjects = async (token) => {
     try {
-      const response = await axios.get("http://192.168.100.30:5000/api/active-projects", {
+      const response = await axios.get("/active-projects", {
         headers: { Authorization: `Bearer ${token}` },
       })
       setProjects(response.data.projects || [])

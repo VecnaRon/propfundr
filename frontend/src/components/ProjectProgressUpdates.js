@@ -19,7 +19,7 @@ const ProjectProgressUpdates = () => {
           return;
         }
 
-        const response = await fetch(`http://192.168.100.30:5000/api/project-progress?projectId=${loggedInUserProjectId}`);
+        const response = await fetch(`/project-progress?projectId=${loggedInUserProjectId}`);
 
         if (!response.ok) {
           throw new Error('Failed to fetch project progress');

@@ -90,7 +90,7 @@ const CompleteInvestorProfile = () => {
       }
 
       const response = await axios.post(
-        "http://192.168.100.30:5000/api/investor-profile",
+        "/investor-profile",
         {
           user_id: userId,
           investment_goal: investmentGoal,

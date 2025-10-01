@@ -159,7 +159,7 @@ const accessLogHoverBgColor = useColorModeValue("gray.100", "gray.600");
   useEffect(() => {
     if (!token) return
 
-    fetch("http://192.168.100.30:5000/api/user", {
+    fetch("/user", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -200,7 +200,7 @@ const accessLogHoverBgColor = useColorModeValue("gray.100", "gray.600");
   // Load 2FA status
   useEffect(() => {
     axios
-      .get("http://192.168.100.30:5000/api/get-2fa-status", {
+      .get("/get-2fa-status", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -215,7 +215,7 @@ const accessLogHoverBgColor = useColorModeValue("gray.100", "gray.600");
   useEffect(() => {
     const fetchKycStatus = async () => {
       try {
-        const response = await fetch("http://192.168.100.30:5000/api/get-kyc-status", {
+        const response = await fetch("/get-kyc-status", {
           headers: { Authorization: `Bearer ${token}` },
         })
 
@@ -247,7 +247,7 @@ const accessLogHoverBgColor = useColorModeValue("gray.100", "gray.600");
   useEffect(() => {
     if (userId) {
       axios
-        .get(`http://192.168.100.30:5000/api/access-logs/${userId}`, {
+        .get(`/access-logs/${userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {
@@ -268,7 +268,7 @@ const accessLogHoverBgColor = useColorModeValue("gray.100", "gray.600");
         return
       }
 
-      const response = await axios.post(`http://192.168.100.30:5000/api/auth/export-data/${exportType}`, null, {
+      const response = await axios.post(`/auth/export-data/${exportType}`, null, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -291,7 +291,7 @@ const accessLogHoverBgColor = useColorModeValue("gray.100", "gray.600");
 
   const fetchSettings = async (userId) => {
     try {
-      const response = await fetch(`http://192.168.100.30:5000/api/settings/${userId}`, {
+      const response = await fetch(`/settings/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -359,7 +359,7 @@ const handleImageChange = (e) => {
     }
 
     try {
-      const response = await fetch("http://192.168.100.30:5000/api/settings/update", {
+      const response = await fetch("/settings/update", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -452,7 +452,7 @@ const handleImageChange = (e) => {
 
     setLoading(true)
     try {
-    const response = await fetch("http://192.168.100.30:5000/api/change-password", {
+    const response = await fetch("/change-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -516,7 +516,7 @@ const handleImageChange = (e) => {
   const requestOtp = async () => {
     setLoading(true)
     try {
-      const response = await fetch("http://192.168.100.30:5000/api/request-otp", {
+      const response = await fetch("/request-otp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -561,7 +561,7 @@ const handleImageChange = (e) => {
   const submitOtp = async () => {
     setLoading(true)
     try {
-      const response = await fetch("http://192.168.100.30:5000/api/enable-2fa", {
+      const response = await fetch("/enable-2fa", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -610,7 +610,7 @@ const disableTwoFactor = async () => {
   setLoading(true)
   try {
     const response = await axios.post(
-      "http://192.168.100.30:5000/api/disable-2fa",
+      "/disable-2fa",
       {},
       { headers: { Authorization: `Bearer ${token}` } }
     )
@@ -654,7 +654,7 @@ const disableTwoFactor = async () => {
   const handleDeleteAccount = async () => {
     setLoading(true)
     try {
-      const response = await axios.delete("http://192.168.100.30:5000/api/user/delete", {
+      const response = await axios.delete("/user/delete", {
         headers: { Authorization: `Bearer ${token}` },
       })
 

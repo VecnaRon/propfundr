@@ -70,7 +70,7 @@ const InvestorOverview = () => {
     }
 
     axios
-      .get("http://192.168.100.30:5000/api/investor-overview", {
+      .get("/investor-overview", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

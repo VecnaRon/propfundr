@@ -52,7 +52,7 @@ function ForgotPasswordPage() {
     }
 
     try {
-      const response = await axios.post("http://192.168.100.30:5000/api/auth/forgot-password", { email })
+      const response = await axios.post("/auth/forgot-password", { email })
       setMessage(response.data.message)
     } catch (error) {
       setError(error.response?.data?.message || "Error sending reset email. Please try again.")

@@ -51,7 +51,7 @@ const OwnWithdrawal = () => {
       if (!token) throw new Error("No authentication token found");
 
       const response = await axios.post(
-        "http://192.168.100.30:5000/api/ownwallet/withdraw",
+        "/ownwallet/withdraw",
         {
           amount: parseFloat(withdrawAmount),
           payment_method: "paypal",

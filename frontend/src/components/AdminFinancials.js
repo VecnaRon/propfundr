@@ -95,11 +95,11 @@ const [isPreviewModalOpen, setIsPreviewModalOpen] = useState(false);
       const headers = { Authorization: `Bearer ${token}` }
 
       const [withdrawalRes, investmentsRes, payoutsRes, reportsRes, returnEarningsRes] = await Promise.all([
-        fetch("http://192.168.100.30:5000/api/admin/withdrawal-requests", { headers }),
-        fetch("http://192.168.100.30:5000/api/admin/pending-investments", { headers }),
-        fetch("http://192.168.100.30:5000/api/admin/payouts/pending-projects", { headers }),
-        fetch("http://192.168.100.30:5000/api/admin/financial-reports", { headers }),
-        fetch("http://192.168.100.30:5000/api/admin/return-earnings", { headers }),
+        fetch("/admin/withdrawal-requests", { headers }),
+        fetch("/admin/pending-investments", { headers }),
+        fetch("/admin/payouts/pending-projects", { headers }),
+        fetch("/admin/financial-reports", { headers }),
+        fetch("/admin/return-earnings", { headers }),
       ])
 
       if (!withdrawalRes.ok || !investmentsRes.ok || !payoutsRes.ok || !reportsRes.ok || !returnEarningsRes.ok) {
@@ -124,7 +124,7 @@ const [isPreviewModalOpen, setIsPreviewModalOpen] = useState(false);
       setProcessingId(withdrawalId)
 
     const token = sessionStorage.getItem("token");
-      const response = await fetch("http://192.168.100.30:5000/api/admin/approve-withdrawal", {
+      const response = await fetch("/admin/approve-withdrawal", {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify({ transactionId: withdrawalId, approve: true }),
@@ -162,7 +162,7 @@ const [isPreviewModalOpen, setIsPreviewModalOpen] = useState(false);
       setProcessingId(withdrawalId)
   
 const token = sessionStorage.getItem("token");
-      const response = await fetch("http://192.168.100.30:5000/api/admin/reject-withdrawal", {
+      const response = await fetch("/admin/reject-withdrawal", {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify({ transactionId: withdrawalId }),
@@ -208,7 +208,7 @@ const token = sessionStorage.getItem("token");
       setProcessingId(investmentId)
 
      const token = sessionStorage.getItem("token");
-      const response = await fetch("http://192.168.100.30:5000/api/admin/approve-investment", {
+      const response = await fetch("/admin/approve-investment", {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify({ investmentId }),
@@ -247,7 +247,7 @@ const handleRejectInvestment = async (investmentId, userId) => {
     setProcessing(true);
     const token = sessionStorage.getItem("token");
 
-    const response = await fetch("http://192.168.100.30:5000/api/admin/reject-investment", {
+    const response = await fetch("/admin/reject-investment", {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       body: JSON.stringify({ investmentId, userId }),
@@ -284,7 +284,7 @@ const handleApproveReturnEarning = async (id, status) => {
 const token = sessionStorage.getItem("token");
 
   try {
-    const res = await fetch(`http://192.168.100.30:5000/api/admin/return-earnings/${id}/approve`, {
+    const res = await fetch(`/admin/return-earnings/${id}/approve`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -329,7 +329,7 @@ const handleSingleProjectPayout = async (propertyId) => {
     setProcessing(true);
    const token = sessionStorage.getItem("token");
 
-    const res = await fetch(`http://192.168.100.30:5000/api/admin/manual-payouts/project/${propertyId}`, {
+    const res = await fetch(`/admin/manual-payouts/project/${propertyId}`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -364,7 +364,7 @@ const handleSingleProjectPayout = async (propertyId) => {
   const handleViewDistributionPreview = async (propertyId) => {
   try {
   const token = sessionStorage.getItem("token");
-    const res = await fetch(`http://192.168.100.30:5000/api/admin/payouts/property/${propertyId}/distribution-preview`, {
+    const res = await fetch(`/admin/payouts/property/${propertyId}/distribution-preview`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 

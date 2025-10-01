@@ -109,7 +109,7 @@ const AdminSecurityManagement = () => {
     setLoading(true)
     try {
       const token = sessionStorage.getItem("token");
-      const response = await fetch("http://192.168.100.30:5000/api/admin/security-data", {
+      const response = await fetch("/admin/security-data", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

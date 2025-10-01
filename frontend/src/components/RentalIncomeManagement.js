@@ -70,7 +70,7 @@ const RentalIncomeManagement = () => {
   // Fetch Owner's Properties
   useEffect(() => {
     setDataLoading(true)
-    fetch("http://192.168.100.30:5000/api/properties", {
+    fetch("/properties", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -87,7 +87,7 @@ const RentalIncomeManagement = () => {
   // Fetch Rental Income Data
   useEffect(() => {
     setDataLoading(true)
-    fetch("http://192.168.100.30:5000/api/rental-income", {
+    fetch("/rental-income", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -131,7 +131,7 @@ const RentalIncomeManagement = () => {
     };
   
     try {
-      const res = await fetch("http://192.168.100.30:5000/api/rental-income", {
+      const res = await fetch("/rental-income", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -162,7 +162,7 @@ const RentalIncomeManagement = () => {
   
       // Reload rental income data
       try {
-        const refreshed = await fetch("http://192.168.100.30:5000/api/rental-income", {
+        const refreshed = await fetch("/rental-income", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const newData = await refreshed.json();
@@ -222,7 +222,7 @@ const RentalIncomeManagement = () => {
   useEffect(() => {
     const fetchWallet = async () => {
       try {
-        const res = await fetch("http://192.168.100.30:5000/api/owner-wallet", {
+        const res = await fetch("/owner-wallet", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();

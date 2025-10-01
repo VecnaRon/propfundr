@@ -62,7 +62,7 @@ const ConfirmEmailPage = () => {
     }
 
     try {
-      const response = await axios.post("http://192.168.100.30:5000/api/confirm-otp", { email, otp })
+      const response = await axios.post("/confirm-otp", { email, otp })
 
       const { token, user } = response.data
 
@@ -108,7 +108,7 @@ const ConfirmEmailPage = () => {
     }
 
     try {
-      const response = await axios.post("http://192.168.100.30:5000/api/resend-otp", { email })
+      const response = await axios.post("/resend-otp", { email })
       toast({
         title: "OTP resent",
         description: "Check your email for the new verification code.",

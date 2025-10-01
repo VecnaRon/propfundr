@@ -7,6 +7,7 @@ import { extendTheme } from "@chakra-ui/react"
 import { PayPalScriptProvider } from "@paypal/react-paypal-js"
 import { io } from "socket.io-client"
 
+
 // Import all your components
 import HomePage from "./components/HomePage"
 import LoginPage from "./components/LoginPage"
@@ -112,7 +113,8 @@ function App() {
 
   useEffect(() => {
     // Use Socket.IO instead of WebSocket
-    const socket = io("http://localhost:5000") // Adjust to your backend server URL
+    const socket = io(process.env.REACT_APP_BACKEND_URL || "http://localhost:5000")
+// Adjust to your backend server URL
 
     socket.on("connect", () => {
       console.log("Connected to WebSocket server:", socket.id)

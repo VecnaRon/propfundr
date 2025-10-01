@@ -17,13 +17,13 @@ const InvestmentActions = () => {
     }
 
     try {
-      const walletResponse = await fetch('http://192.168.100.30:5000/api/wallet-balance', {
+      const walletResponse = await fetch('/wallet-balance', {
         headers: {
           Authorization: `Bearer ${token}` // Corrected the template literal
         }
       });
 
-      const transactionsResponse = await fetch('http://192.168.100.30:5000/api/transaction-history', {
+      const transactionsResponse = await fetch('/transaction-history', {
         headers: {
           Authorization: `Bearer ${token}` // Corrected the template literal
         }
@@ -58,7 +58,7 @@ const InvestmentActions = () => {
 
     if (amount > 0 && amount <= walletBalance) {
       try {
-        const response = await fetch('http://192.168.100.30:5000/api/invest', {
+        const response = await fetch('/invest', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

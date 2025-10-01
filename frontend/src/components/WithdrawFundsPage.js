@@ -15,7 +15,7 @@ const WithdrawalPage = () => {
     const fetchBalance = async () => {
       try {
         const token = sessionStorage.getItem("token");
-        const response = await fetch("http://192.168.100.30:5000/api/wallet/withdrawable-balance", {
+        const response = await fetch("/wallet/withdrawable-balance", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -52,7 +52,7 @@ const WithdrawalPage = () => {
     setLoading(true);
     try {
      const token = sessionStorage.getItem("token");
-      const response = await fetch("http://192.168.100.30:5000/api/wallet/withdraw", {
+      const response = await fetch("/wallet/withdraw", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

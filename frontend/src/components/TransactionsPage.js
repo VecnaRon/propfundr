@@ -74,7 +74,7 @@ const TransactionsPage = () => {
 
   const fetchTransactions = async () => {
     setLoading(true)
-    const url = `http://192.168.100.30:5000/api/admin/transactions`
+    const url = `/admin/transactions`
     try {
       const token = sessionStorage.getItem("token");// get token 
 

@@ -55,7 +55,7 @@ const NotificationModal = ({ isOpen, onClose }) => {
     const token = sessionStorage.getItem("token");
       if (!token) throw new Error("No token found. Please log in.")
 
-      const response = await axios.get("http://192.168.100.30:5000/api/notifications", {
+      const response = await axios.get("/notifications", {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -77,7 +77,7 @@ const NotificationModal = ({ isOpen, onClose }) => {
 
   const markNotificationsAsRead = async (token) => {
     try {
-      await axios.put("http://192.168.100.30:5000/api/notifications/mark-read", null, {
+      await axios.put("/notifications/mark-read", null, {
         headers: { Authorization: `Bearer ${token}` },
       })
     } catch (err) {

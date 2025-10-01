@@ -56,7 +56,7 @@ const KycStatusPage = () => {
   const fetchKycData = async () => {
     try {
       setLoading(true)
-      const response = await fetch("http://192.168.100.30:5000/api/kyc-status", {
+      const response = await fetch("/kyc-status", {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },

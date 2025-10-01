@@ -52,6 +52,7 @@ import NotificationModal from "./NotificationModal"
 import OwnerOverview from "./OwnerOverview"
 import { io } from "socket.io-client"
 
+
 const OwnerDashboard = () => {
   const navigate = useNavigate()
   const [isDropdownOpen, setDropdownOpen] = useState(false)
@@ -64,10 +65,14 @@ const OwnerDashboard = () => {
   const toast = useToast()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const isMobile = useBreakpointValue({ base: true, md: false })
-const socket = io("http://192.168.100.30:5000", {
-  auth: { token: sessionStorage.getItem("token") },
-});
 
+  // ✅ Use env API base or fallback to localhost
+  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000"
+
+  // ✅ Socket connection (with env url)
+  const socket = io(API_BASE_URL, {
+    auth: { token: sessionStorage.getItem("token") },
+  })
 
   // Color scheme
   const bgColor = useColorModeValue("gray.50", "gray.900")
@@ -87,11 +92,11 @@ const socket = io("http://192.168.100.30:5000", {
 
   useEffect(() => {
     const fetchNotifications = async () => {
-  const token = sessionStorage.getItem("token");
+      const token = sessionStorage.getItem("token")
       if (!token) return
 
       try {
-        const response = await fetch("http://192.168.100.30:5000/api/notifications", {
+        const response = await fetch(`${API_BASE_URL}/notifications`, {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },
         })
@@ -105,11 +110,11 @@ const socket = io("http://192.168.100.30:5000", {
     }
 
     const fetchProfileImage = async () => {
-     const token = sessionStorage.getItem("token");
+      const token = sessionStorage.getItem("token")
       if (!token) return
 
       try {
-        const response = await fetch("http://192.168.100.30:5000/api/user/profile", {
+        const response = await fetch(`${API_BASE_URL}/user/profile`, {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },
         })
@@ -121,7 +126,7 @@ const socket = io("http://192.168.100.30:5000", {
         if (data.profileImage) {
           const imageUrl = data.profileImage.startsWith("http")
             ? data.profileImage
-            : `http://192.168.100.30:5000${data.profileImage}`
+            : `${API_BASE_URL}${data.profileImage}`
 
           setProfileImage(imageUrl)
         } else {
@@ -138,46 +143,43 @@ const socket = io("http://192.168.100.30:5000", {
 
     const interval = setInterval(fetchNotifications, 30000)
     return () => clearInterval(interval)
-  }, [])
+  }, [API_BASE_URL])
 
-  
- const handleLogout = async () => {
-  const token = sessionStorage.getItem("token");
+  const handleLogout = async () => {
+    const token = sessionStorage.getItem("token")
 
-  if (!token) {
-    console.error("No token found");
-    navigate("/");
-    return;
+    if (!token) {
+      console.error("No token found")
+      navigate("/")
+      return
+    }
+
+    try {
+      const base64Payload = token.split(".")[1]
+      if (!base64Payload) throw new Error("Invalid token format")
+
+      const decodedPayload = JSON.parse(atob(base64Payload))
+      const email = decodedPayload.email
+
+      await axios.post(`${API_BASE_URL}/logout`, { email }, { withCredentials: true })
+
+      socket.disconnect()
+      sessionStorage.removeItem("token")
+      navigate("/")
+    } catch (error) {
+      console.error("Logout failed:", error)
+      sessionStorage.removeItem("token")
+      navigate("/")
+    }
   }
-
-  try {
-    const base64Payload = token.split(".")[1];
-    if (!base64Payload) throw new Error("Invalid token format");
-
-    const decodedPayload = JSON.parse(atob(base64Payload));
-    const email = decodedPayload.email;
-
-    await axios.post("http://192.168.100.30:5000/logout", { email }, { withCredentials: true });
-
-    socket.disconnect();
-
-    sessionStorage.removeItem("token");
-
-    navigate("/");
-  } catch (error) {
-    console.error("Logout failed:", error);
-    sessionStorage.removeItem("token");
-    navigate("/");
-  }
-};
 
   const toggleNotificationsModal = async () => {
     setShowNotificationsModal(!showNotificationsModal)
 
     if (!showNotificationsModal && unreadCount > 0) {
-     const token = sessionStorage.getItem("token");
+      const token = sessionStorage.getItem("token")
       try {
-        await fetch("http://192.168.100.30:5000/api/notifications/mark-read", {
+        await fetch(`${API_BASE_URL}/notifications/mark-read`, {
           method: "PUT",
           headers: { Authorization: `Bearer ${token}` },
         })
@@ -228,6 +230,8 @@ const socket = io("http://192.168.100.30:5000", {
     { label: "Analytics & Reports", path: "/analytics-reports", icon: BarChart2Icon },
     { label: "Help & Support", path: "/help-support", icon: HelpCircleIcon },
   ]
+
+
 
   return (
     <Box minH="100vh" bg={bgColor}>

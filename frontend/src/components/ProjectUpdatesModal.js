@@ -60,7 +60,7 @@ const ProjectUpdatesModal = ({ projectId, onClose }) => {
  const token = sessionStorage.getItem("token");
 
   try {
-    const response = await axios.get(`http://192.168.100.30:5000/api/updates/${projectId}`, {
+    const response = await axios.get(`/updates/${projectId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -106,7 +106,7 @@ const ProjectUpdatesModal = ({ projectId, onClose }) => {
 
   try {
     const response = await axios.post(
-      "http://192.168.100.30:5000/api/updates",
+      "/updates",
       {
         project_id: projectId,
         content: newUpdate,
@@ -151,7 +151,7 @@ const ProjectUpdatesModal = ({ projectId, onClose }) => {
 const token = sessionStorage.getItem("token");
 
   try {
-    await axios.delete(`http://192.168.100.30:5000/api/updates/${updateId}`, {
+    await axios.delete(`/updates/${updateId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

@@ -104,7 +104,7 @@ const InvestmentDetails = () => {
     const fetchInvestmentDetails = async () => {
       setLoading(true)
       try {
-        const response = await fetch(`http://192.168.100.30:5000/api/investment-opportunities/${id}`)
+        const response = await fetch(`/investment-opportunities/${id}`)
         if (!response.ok) throw new Error("Failed to fetch investment details. Please try again.")
         const data = await response.json()
         setInvestment(data)
@@ -160,7 +160,7 @@ const InvestmentDetails = () => {
 
     try {
       console.log("Sending request to backend...")
-      const response = await fetch("http://192.168.100.30:5000/api/invest", {
+      const response = await fetch("/invest", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -185,7 +185,7 @@ const InvestmentDetails = () => {
 
       // Refresh investment details after successful investment
       setLoading(true)
-      const updatedInvestment = await fetch(`http://192.168.100.30:5000/api/investment-opportunities/${id}`)
+      const updatedInvestment = await fetch(`/investment-opportunities/${id}`)
       const updatedData = await updatedInvestment.json()
       setInvestment(updatedData)
     } catch (err) {
@@ -206,7 +206,7 @@ const InvestmentDetails = () => {
 useEffect(() => {
   const fetchImages = async () => {
     try {
-      const res = await fetch(`http://192.168.100.30:5000/api/properties/${id}/images`)
+      const res = await fetch(`/properties/${id}/images`)
       if (!res.ok) throw new Error("Could not fetch images.")
       const data = await res.json()
       setPropertyImages(data)

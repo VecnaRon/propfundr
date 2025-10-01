@@ -103,26 +103,34 @@ app.use(express.urlencoded({ limit: "100mb", extended: true }));
 
 app.use("/api/wallet", walletRoutes);
 
-// Database connection pool setup
+
+// ✅ Create a promise-based pool
 const pool = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  host: process.env.MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
+  port: process.env.MYSQLPORT,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
 }).promise();
 
-// Test database connection
-pool.getConnection()
-  .then(() => console.log('Connected to MySQL database via pool.'))
-  .catch((err) => console.error('Database connection failed:', err));
+// ✅ Test database connection
+(async () => {
+  try {
+    const conn = await pool.getConnection();
+    console.log("✅ Connected to Railway MySQL database via pool.");
+    conn.release();
+  } catch (err) {
+    console.error("❌ Database connection failed:", err);
+  }
+})();
 
+export default pool;
 
 // Set the port
-const PORT = process.env.PORT || 5000;  
-
+const PORT = process.env.PORT || 5000;
 
 // Handle __dirname in ES Modules
 const __filename = fileURLToPath(import.meta.url);

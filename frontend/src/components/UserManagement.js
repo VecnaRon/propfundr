@@ -81,7 +81,7 @@ const UserManagement = () => {
   const fetchUsers = async () => {
     try {
       const token = sessionStorage.getItem("token");
-      const { data } = await axios.get("http://192.168.100.30:5000/api/admin/users", {
+      const { data } = await axios.get("/admin/users", {
         headers: { Authorization: `Bearer ${token}` },
       })
       setUsers(data)
@@ -96,7 +96,7 @@ const UserManagement = () => {
     try {
       const token = sessionStorage.getItem("token");
       await axios.post(
-        "http://192.168.100.30:5000/api/admin/users/delete",
+        "/admin/users/delete",
         { userIds: selectedUsers },
         {
           headers: { Authorization: `Bearer ${token}` },

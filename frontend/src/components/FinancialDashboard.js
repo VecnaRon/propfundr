@@ -74,7 +74,7 @@ const FinancialDashboard = () => {
   const fetchFinancialData = async () => {
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch("http://192.168.100.30:5000/api/admin/financial-overview", {
+      const response = await fetch("/admin/financial-overview", {
         headers: { Authorization: `Bearer ${token}` },
       })
 

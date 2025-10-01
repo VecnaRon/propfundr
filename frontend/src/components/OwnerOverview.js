@@ -63,7 +63,7 @@ const OwnerOverview = () => {
 
       try {
         console.log("📡 Fetching owner overview...")
-        const response = await fetch("http://192.168.100.30:5000/api/owner/overview", {
+        const response = await fetch("/owner/overview", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,

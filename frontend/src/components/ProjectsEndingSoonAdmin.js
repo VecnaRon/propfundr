@@ -12,7 +12,7 @@ const ProjectsEndingSoonAdmin = () => {
   const fetchProjects = async () => {
     const token = sessionStorage.getItem("token");
     try {
-      const res = await fetch("http://192.168.100.30:5000/api/admin/projects-ending-soon", {
+      const res = await fetch("/admin/projects-ending-soon", {
         headers: { Authorization: `Bearer ${token}` }
       })
       const data = await res.json()
@@ -26,7 +26,7 @@ const ProjectsEndingSoonAdmin = () => {
 const token = sessionStorage.getItem("token");
     setLoadingProjectId(projectId)
     try {
-      const res = await fetch("http://192.168.100.30:5000/api/admin/remind-owner", {
+      const res = await fetch("/admin/remind-owner", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -379,7 +379,7 @@ const AdminDashboard = () => {
 
   const fetchDashboardData = async (token) => {
     try {
-      const response = await fetch("http://192.168.100.30:5000/api/admin/overview", {
+      const response = await fetch("/admin/overview", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -403,7 +403,7 @@ const AdminDashboard = () => {
       const token = sessionStorage.getItem("token");
       if (!token) return
 
-      const response = await axios.get("http://192.168.100.30:5000/api/admin/notifications/unread-count", {
+      const response = await axios.get("/admin/notifications/unread-count", {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -419,7 +419,7 @@ const AdminDashboard = () => {
 
   const fetchRecentActivity = async (token) => {
     try {
-      const res = await fetch("http://192.168.100.30:5000/api/admin/recent-activity", {
+      const res = await fetch("/admin/recent-activity", {
         headers: { Authorization: `Bearer ${token}` },
       })
       if (!res.ok) throw new Error("Failed to fetch recent activity")
@@ -457,7 +457,7 @@ const AdminDashboard = () => {
     if (!token) return
   
     try {
-      const response = await fetch("http://192.168.100.30:5000/api/user/profile", {
+      const response = await fetch("/user/profile", {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
       })
@@ -468,13 +468,14 @@ const AdminDashboard = () => {
   
       console.log("Profile image from API:", data.profileImage)
   
-      if (data.profileImage) {
-        const imageUrl = data.profileImage.startsWith("http")
-          ? data.profileImage
-          : `http://192.168.100.30:5000${data.profileImage}`
-  
-        setProfileImage(imageUrl)
-      } else {
+  if (data.profileImage) {
+  const baseURL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+  const imageUrl = data.profileImage.startsWith("http")
+    ? data.profileImage
+    : `${baseURL}${data.profileImage}`;
+
+  setProfileImage(imageUrl);
+} else {
         setProfileImage("/assets/default_profile.jpg")
       }
     } catch (err) {

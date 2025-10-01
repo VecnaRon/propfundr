@@ -18,7 +18,7 @@ const UpcomingTasks = ({ ownerId }) => {
           return;
         }
 
-        const response = await axios.get(`http://192.168.100.30:5000/api/tasks?user_id=${ownerId}`, {
+        const response = await axios.get(`/tasks?user_id=${ownerId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -48,7 +48,7 @@ const UpcomingTasks = ({ ownerId }) => {
         return;
       }
 
-      const response = await axios.post('http://192.168.100.30:5000/api/tasks', newTask, {
+      const response = await axios.post('/tasks', newTask, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -71,7 +71,7 @@ const UpcomingTasks = ({ ownerId }) => {
         return;
       }
 
-      const response = await axios.delete(`http://192.168.100.30:5000/api/tasks/${taskId}`, {
+      const response = await axios.delete(`/tasks/${taskId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -91,7 +91,7 @@ const UpcomingTasks = ({ ownerId }) => {
         return;
       }
 
-      const response = await axios.put(`http://192.168.100.30:5000/api/tasks/${taskId}`, { status: updatedStatus }, {
+      const response = await axios.put(`/tasks/${taskId}`, { status: updatedStatus }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -55,7 +55,7 @@ const DocumentManagementModal = ({ propertyId, onClose }) => {
     const fetchDocuments = async () => {
       try {
        const token = sessionStorage.getItem("token");
-        const response = await axios.get(`http://192.168.100.30:5000/api/documents/${propertyId}`, {
+        const response = await axios.get(`/documents/${propertyId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -92,14 +92,14 @@ const DocumentManagementModal = ({ propertyId, onClose }) => {
 
     try {
       const token = sessionStorage.getItem("token");
-      await axios.post(`http://192.168.100.30:5000/api/documents/upload/${propertyId}`, formData, {
+      await axios.post(`/documents/upload/${propertyId}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
         },
       })
 
-      const response = await axios.get(`http://192.168.100.30:5000/api/documents/${propertyId}`, {
+      const response = await axios.get(`/documents/${propertyId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -132,7 +132,7 @@ const DocumentManagementModal = ({ propertyId, onClose }) => {
   const handleDelete = async (fileId) => {
     try {
       const token = sessionStorage.getItem("token");
-      await axios.delete(`http://192.168.100.30:5000/api/documents/delete/${propertyId}/${fileId}`, {
+      await axios.delete(`/documents/delete/${propertyId}/${fileId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

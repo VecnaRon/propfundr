@@ -450,7 +450,7 @@ const ActiveInvestments = () => {
 
   const fetchInvestments = useCallback(async (token) => {
     try {
-      const response = await axios.get("http://192.168.100.30:5000/api/active-investments", {
+      const response = await axios.get("/active-investments", {
         headers: { Authorization: `Bearer ${token}` },
       })
 

@@ -57,7 +57,7 @@ export default function FeedbackTestimonial() {
 
   const fetchTestimonials = async () => {
     try {
-      const res = await axios.get("http://192.168.100.30:5000/api/feedback")
+      const res = await axios.get("/feedback")
       setTestimonials(res.data.reverse()) // Latest first
     } catch (error) {
       toast({
@@ -83,7 +83,7 @@ export default function FeedbackTestimonial() {
     setIsSubmitting(true)
 
     try {
-      await axios.post("http://192.168.100.30:5000/api/feedback", form)
+      await axios.post("/feedback", form)
       toast({
         title: "Feedback submitted successfully!",
         description: "Thank you for sharing your experience with PropFundr.",

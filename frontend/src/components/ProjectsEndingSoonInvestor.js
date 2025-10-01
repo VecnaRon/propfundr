@@ -41,7 +41,7 @@ const ProjectsEndingSoonInvestor = () => {
     setLoading(true)
     const token = sessionStorage.getItem("token");
     try {
-      const res = await fetch("http://192.168.100.30:5000/api/investor/projects-ending-soon", {
+      const res = await fetch("/investor/projects-ending-soon", {
         headers: { Authorization: `Bearer ${token}` },
       })
 

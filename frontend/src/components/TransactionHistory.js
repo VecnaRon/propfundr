@@ -112,7 +112,7 @@ const token = sessionStorage.getItem("token");
     }
 
     try {
-      const response = await fetch("http://192.168.100.30:5000/api/transaction-history", {
+      const response = await fetch("/transaction-history", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

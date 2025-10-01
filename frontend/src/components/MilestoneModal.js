@@ -68,7 +68,7 @@ const token = sessionStorage.getItem("token");
     const fetchMilestones = async () => {
       try {
      const response = await axios.get(
-  `http://192.168.100.30:5000/api/milestones/${projectId}`,
+  `/milestones/${projectId}`,
   {
     headers: {
       Authorization: `Bearer ${sessionStorage.getItem("token")}`
@@ -135,7 +135,7 @@ const token = sessionStorage.getItem("token");
         due_date: formattedDate,
       }
     const response = await axios.post(
-  "http://192.168.100.30:5000/api/milestones",
+  "/milestones",
   milestoneData,
   {
     headers: {
@@ -185,7 +185,7 @@ const token = sessionStorage.getItem("token");
     if (!id) return
     try {
      await axios.delete(
-  `http://192.168.100.30:5000/api/milestones/${id}`,
+  `/milestones/${id}`,
   {
     headers: {
       Authorization: `Bearer ${sessionStorage.getItem("token")}`

@@ -105,7 +105,7 @@ const OwnerWallet = () => {
       const token = sessionStorage.getItem("token");
       if (!token) throw new Error("No authentication token found")
 
-      const response = await axios.get("http://192.168.100.30:5000/api/owner-wallet", {
+      const response = await axios.get("/owner-wallet", {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -138,7 +138,7 @@ const OwnerWallet = () => {
       const token = sessionStorage.getItem("token");
       if (!token) throw new Error("No authentication token found")
 
-      const response = await axios.get("http://192.168.100.30:5000/api/wallet/transactions", {
+      const response = await axios.get("/wallet/transactions", {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -172,7 +172,7 @@ const OwnerWallet = () => {
 
     try {
       const response = await axios.post(
-        "http://192.168.100.30:5000/api/withdraw/send-otp",
+        "/withdraw/send-otp",
         {},
         { headers: { Authorization: `Bearer ${token}` } },
       )
@@ -226,7 +226,7 @@ const OwnerWallet = () => {
 
     try {
       const response = await axios.post(
-        "http://192.168.100.30:5000/api/withdraw/verify-otp",
+        "/withdraw/verify-otp",
         { otp },
         { headers: { Authorization: `Bearer ${token}` } },
       )
@@ -269,7 +269,7 @@ const OwnerWallet = () => {
 
     try {
      const token = sessionStorage.getItem("token");
-      const res = await fetch("http://192.168.100.30:5000/api/wallet/cancel-withdrawal", {
+      const res = await fetch("/wallet/cancel-withdrawal", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -314,7 +314,7 @@ const OwnerWallet = () => {
  const token = sessionStorage.getItem("token");
 
     try {
-      const res = await fetch("http://192.168.100.30:5000/api/kycstatus", {
+      const res = await fetch("/kycstatus", {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -348,7 +348,7 @@ const OwnerWallet = () => {
 const token = sessionStorage.getItem("token");
 
   try {
-    const res = await fetch("http://192.168.100.30:5000/api/kycstatus", {
+    const res = await fetch("/kycstatus", {
       headers: { Authorization: `Bearer ${token}` },
     });
 

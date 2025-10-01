@@ -48,7 +48,7 @@ const EditProjectModal = ({ project, onClose, onUpdate }) => {
 
       // Send updated project data to backend
       const { data: updatedProject } = await axios.put(
-        `http://192.168.100.30:5000/api/projects/${project.id}`,
+        `/projects/${project.id}`,
         formData,
         {
           headers: { Authorization: `Bearer ${token}` },

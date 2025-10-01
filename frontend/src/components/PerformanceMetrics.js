@@ -35,7 +35,7 @@ const PerformanceMetrics = ({ projectId }) => {
 const token = sessionStorage.getItem("token");
 
       try {
-        const response = await axios.get("http://192.168.100.30:5000/api/performance-metrics", {
+        const response = await axios.get("/performance-metrics", {
           headers: { Authorization: `Bearer ${token}` },
         })
 

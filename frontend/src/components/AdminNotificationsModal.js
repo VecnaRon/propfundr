@@ -48,7 +48,7 @@ const AdminNotificationsModal = ({ closeModal }) => {
   const fetchNotifications = async () => {
     setLoading(true)
     try {
-      const response = await fetch("http://192.168.100.30:5000/api/admin/notifications", {
+      const response = await fetch("/admin/notifications", {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })
 
@@ -69,7 +69,7 @@ const AdminNotificationsModal = ({ closeModal }) => {
 
   const markAllAsRead = async () => {
     try {
-      const response = await fetch("http://192.168.100.30:5000/api/admin/notifications/read", {
+      const response = await fetch("/admin/notifications/read", {
         method: "PUT",
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       })

@@ -131,7 +131,7 @@ const InvestorWallet = () => {
 
     try {
       const headers = { Authorization: `Bearer ${token}` }
-      const { data: walletData } = await axios.get("http://192.168.100.30:5000/api/wallet", { headers })
+      const { data: walletData } = await axios.get("/wallet", { headers })
 
       if (!walletData) {
         setError("Received empty wallet data")
@@ -167,7 +167,7 @@ const token = sessionStorage.getItem("token");
 
     try {
       const headers = { Authorization: `Bearer ${token}` }
-      const { data: transactionsData } = await axios.get("http://192.168.100.30:5000/api/transactions/recent", {
+      const { data: transactionsData } = await axios.get("/transactions/recent", {
         headers,
       })
       setTransactions(transactionsData)
@@ -191,7 +191,7 @@ const token = sessionStorage.getItem("token");
 
     try {
       const response = await axios.post(
-        "http://192.168.100.30:5000/api/withdraw/send-otp",
+        "/withdraw/send-otp",
         {},
         { headers: { Authorization: `Bearer ${token}` } },
       )
@@ -247,7 +247,7 @@ const token = sessionStorage.getItem("token");
 
     try {
       const response = await axios.post(
-        "http://192.168.100.30:5000/api/withdraw/verify-otp",
+        "/withdraw/verify-otp",
         { otp: otpValue },
         { headers: { Authorization: `Bearer ${token}` } },
       )
@@ -312,7 +312,7 @@ const token = sessionStorage.getItem("token");
 
     try {
       const token = sessionStorage.getItem("token");
-      const res = await fetch("http://192.168.100.30:5000/api/wallet/cancel-withdrawal", {
+      const res = await fetch("/wallet/cancel-withdrawal", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -366,7 +366,7 @@ const token = sessionStorage.getItem("token");
     const token = sessionStorage.getItem("token");
 
     try {
-      const res = await fetch("http://192.168.100.30:5000/api/kycstatus", {
+      const res = await fetch("/kycstatus", {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -399,7 +399,7 @@ const token = sessionStorage.getItem("token");
  const token = sessionStorage.getItem("token");
 
   try {
-    const res = await fetch("http://192.168.100.30:5000/api/kycstatus", {
+    const res = await fetch("/kycstatus", {
       headers: { Authorization: `Bearer ${token}` },
     });
 

@@ -92,7 +92,7 @@ const OwnerCommunication = () => {
     setError(null)
 
     try {
-      const response = await axios.get(`http://192.168.100.30:5000/api/messages/investor/${selectedOwner.id}`, {
+      const response = await axios.get(`/messages/investor/${selectedOwner.id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -119,7 +119,7 @@ const OwnerCommunication = () => {
     setError(null)
 
     try {
-      const response = await axios.get("http://192.168.100.30:5000/api/owners", {
+      const response = await axios.get("/owners", {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -151,7 +151,7 @@ const OwnerCommunication = () => {
 
     try {
       const response = await axios.post(
-        "http://192.168.100.30:5000/api/messages",
+        "/messages",
         { receiverId: selectedOwner.id, message: newMessage },
         { headers: { Authorization: `Bearer ${token}` } },
       )

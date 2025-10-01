@@ -9,7 +9,7 @@ const Checkout = () => {
   const createOrder = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://192.168.100.30:5000/api/paypal/create-order", {
+      const res = await fetch("/paypal/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount, currency: "USD" }),

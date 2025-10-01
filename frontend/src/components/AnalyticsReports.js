@@ -71,7 +71,7 @@ const AnalyticsReports = () => {
       try {
         setLoading(true)
         const token = sessionStorage.getItem("token");
-        const response = await axios.get("http://192.168.100.30:5000/api/analytics", {
+        const response = await axios.get("/analytics", {
           headers: { Authorization: `Bearer ${token}` },
         })
 

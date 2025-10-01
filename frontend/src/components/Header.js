@@ -88,34 +88,37 @@ const socket = io("http://192.168.100.30:5000", {
 };
 
 
-  useEffect(() => {
-    const fetchProfileData = async () => {
-      const token = sessionStorage.getItem("token");
-      if (!token) return
+useEffect(() => {
+  const fetchProfileData = async () => {
+    const token = sessionStorage.getItem("token");
+    if (!token) return;
 
-      try {
-        const response = await fetch("http://192.168.100.30:5000/api/user/profile", {
-          method: "GET",
-          headers: { Authorization: `Bearer ${token}` },
-        })
+    try {
+      const response = await fetch("/user/profile", {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
-        const data = await response.json()
+      const data = await response.json();
 
-        const imagePath = data.profileImage?.trim()
-        const fullImageUrl = imagePath ? `http://192.168.100.30:5000${imagePath}` : "/assets/default_profile.jpg"
+      const imagePath = data.profileImage?.trim();
+      const baseURL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+      const fullImageUrl = imagePath
+        ? `${baseURL}${imagePath}`
+        : "/assets/default_profile.jpg";
 
-        setProfileImage(fullImageUrl)
-        setUserName(data.name || "Investor")
-      } catch (err) {
-        console.error("Error fetching profile data:", err)
-        setProfileImage("/assets/default_profile.jpg")
-      }
+      setProfileImage(fullImageUrl);
+      setUserName(data.name || "Investor");
+    } catch (err) {
+      console.error("Error fetching profile data:", err);
+      setProfileImage("/assets/default_profile.jpg");
     }
+  };
 
-    fetchProfileData()
-  }, [])
+  fetchProfileData();
+}, []);
 
   useEffect(() => {
     fetchUnreadNotifications()
@@ -126,7 +129,7 @@ const socket = io("http://192.168.100.30:5000", {
       const token = sessionStorage.getItem("token");
       if (!token) return
 
-      const response = await axios.get("http://192.168.100.30:5000/api/notifications", {
+      const response = await axios.get("/notifications", {
         headers: { Authorization: `Bearer ${token}` },
       })
 

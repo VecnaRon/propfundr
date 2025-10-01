@@ -16,7 +16,7 @@ const DocumentManagement = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get('http://192.168.100.30:5000/api/projects');
+        const response = await axios.get('/projects');
         setProjects(response.data);
       } catch (error) {
         console.error('Error fetching projects:', error);
@@ -74,7 +74,7 @@ const DocumentManagement = () => {
 
     try {
       setLoading(true);
-      await axios.post(`http://192.168.100.30:5000/api/documents/upload/${projectId}`, formData, {
+      await axios.post(`/documents/upload/${projectId}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setMessage('Document uploaded successfully!');
@@ -103,7 +103,7 @@ const DocumentManagement = () => {
   
     try {
       setLoading(true);
-      await axios.delete(`http://192.168.100.30:5000/api/documents/delete/${projectId}/${encodedDocName}`);
+      await axios.delete(`/documents/delete/${projectId}/${encodedDocName}`);
       setMessage('Document deleted successfully!');
       fetchDocuments();
     } catch (error) {

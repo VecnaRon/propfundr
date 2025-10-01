@@ -86,7 +86,7 @@ const InvestmentPerformance = () => {
     }
 
     try {
-      const response = await axios.get(`http://192.168.100.30:5000/api/investment-performance?timeRange=${timeRange}`, {
+      const response = await axios.get(`/investment-performance?timeRange=${timeRange}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

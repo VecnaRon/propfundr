@@ -68,7 +68,7 @@ export default function PortfolioOverview() {
       const token = sessionStorage.getItem("token");
       if (!token) throw new Error("Authentication token not found")
 
-      const response = await fetch("http://192.168.100.30:5000/api/portfolio", {
+      const response = await fetch("/portfolio", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

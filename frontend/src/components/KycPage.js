@@ -149,7 +149,7 @@ const docWithUserRef = useRef(null)
   });
 
   try {
-    const response = await fetch("http://192.168.100.30:5000/api/submit-kyc", {
+    const response = await fetch("/submit-kyc", {
       method: "POST",
       headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       body: formDataUpload,

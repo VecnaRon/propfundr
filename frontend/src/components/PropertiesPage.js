@@ -180,7 +180,7 @@ const PropertiesPage = () => {
   const fetchProperties = async () => {
     setIsLoading(true)
     try {
-      const response = await fetch("http://192.168.100.30:5000/api/properties", {
+      const response = await fetch("/properties", {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -341,7 +341,7 @@ const PropertiesPage = () => {
     setSelectedProperty(property)
 
     try {
-      const response = await fetch(`http://192.168.100.30:5000/api/properties/${property.propertyId}/images`, {
+      const response = await fetch(`/properties/${property.propertyId}/images`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -393,8 +393,8 @@ const PropertiesPage = () => {
     setIsLoading(true)
     const method = editMode ? "PUT" : "POST"
     const url = editMode
-      ? `http://192.168.100.30:5000/api/properties/${selectedProperty}`
-      : "http://192.168.100.30:5000/api/properties"
+      ? `/properties/${selectedProperty}`
+      : "/properties"
 
     const formattedPropertyData = {
       ...propertyData,
@@ -491,7 +491,7 @@ const PropertiesPage = () => {
     selectedImages.forEach((file) => formData.append("image", file))
 
     try {
-      const response = await fetch(`http://192.168.100.30:5000/api/properties/${propertyId}/upload-image`, {
+      const response = await fetch(`/properties/${propertyId}/upload-image`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
@@ -534,7 +534,7 @@ const PropertiesPage = () => {
   const deleteImage = async (imageUrl) => {
     setIsLoading(true)
     try {
-      const response = await fetch("http://192.168.100.30:5000/api/properties/delete-image", {
+      const response = await fetch("/properties/delete-image", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -595,7 +595,7 @@ const PropertiesPage = () => {
     }
 
     try {
-      const res = await fetch("http://192.168.100.30:5000/api/agreements", {
+      const res = await fetch("/agreements", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -656,7 +656,7 @@ const PropertiesPage = () => {
       try {
         const token = localStorage.getItem("token")
 
-        const response = await fetch("http://192.168.100.30:5000/api/properties/available", {
+        const response = await fetch("/properties/available", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

@@ -107,7 +107,7 @@ const CompleteOwnerProfile = () => {
     }
 
     try {
-      await axios.post("http://192.168.100.30:5000/api/complete-owner-profile", profileData, {
+      await axios.post("/complete-owner-profile", profileData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

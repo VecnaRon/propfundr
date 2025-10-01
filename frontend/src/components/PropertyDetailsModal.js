@@ -59,7 +59,7 @@ const PropertyDetailsModal = ({ propertyId, onClose, onUpdate }) => {
     setFetchLoading(true)
     try {
 const token = sessionStorage.getItem("token");
-      const response = await fetch(`http://192.168.100.30:5000/api/admin/properties/${propertyId}`, {
+      const response = await fetch(`/admin/properties/${propertyId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -101,7 +101,7 @@ const token = sessionStorage.getItem("token");
     try {
       const token = sessionStorage.getItem("token");
       const response = await fetch(
-        `http://192.168.100.30:5000/api/admin/properties/${editedProperty.propertyId}/edit`,
+        `/admin/properties/${editedProperty.propertyId}/edit`,
         {
           method: "PUT",
           headers: {

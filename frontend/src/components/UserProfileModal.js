@@ -82,7 +82,7 @@ const UserProfileModal = ({ user, onClose }) => {
 const handleBanUnban = async (userId) => {
   try {
     const token = sessionStorage.getItem("token");
-    await fetch(`http://192.168.100.30:5000/api/admin/users/${userId}/toggle-ban`, {
+    await fetch(`/admin/users/${userId}/toggle-ban`, {
       method: 'PATCH',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -101,7 +101,7 @@ const handleBanUnban = async (userId) => {
 const handleResetPassword = async (userId) => {
   try {
   const token = sessionStorage.getItem("token");
-    await fetch(`http://192.168.100.30:5000/api/admin/users/${userId}/reset-password`, {
+    await fetch(`/admin/users/${userId}/reset-password`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -124,7 +124,7 @@ const handleEditRole = async (userId) => {
 
   try {
    const token = sessionStorage.getItem("token");
-    await fetch(`http://192.168.100.30:5000/api/admin/users/${userId}/update-role`, {
+    await fetch(`/admin/users/${userId}/update-role`, {
       method: 'PATCH',
       headers: {
         'Authorization': `Bearer ${token}`,

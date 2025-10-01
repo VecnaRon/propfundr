@@ -691,7 +691,7 @@ const InvestmentOpportunitiesContent = () => {
 
     try {
       const token = getToken()
-      const response = await fetch("http://192.168.100.30:5000/api/investment-opportunities", {
+      const response = await fetch("/investment-opportunities", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -710,7 +710,7 @@ const InvestmentOpportunitiesContent = () => {
           // Fetch the first image for each property to display on the card
           let propertyImage = null
           try {
-            const imageResponse = await fetch(`http://192.168.100.30:5000/api/properties/${opportunity.id}/images`, {
+            const imageResponse = await fetch(`/properties/${opportunity.id}/images`, {
               headers: { Authorization: `Bearer ${token}` },
             })
 
@@ -759,7 +759,7 @@ const InvestmentOpportunitiesContent = () => {
     async (propertyId) => {
       try {
         const token = getToken()
-        const response = await fetch(`http://192.168.100.30:5000/api/properties/${propertyId}/images`, {
+        const response = await fetch(`/properties/${propertyId}/images`, {
           headers: { Authorization: `Bearer ${token}` },
         })
 
@@ -799,7 +799,7 @@ const InvestmentOpportunitiesContent = () => {
     async (propertyId) => {
       try {
         const token = getToken()
-        const res = await fetch(`http://192.168.100.30:5000/api/documents/${propertyId}`, {
+        const res = await fetch(`/documents/${propertyId}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         if (!res.ok) throw new Error("Failed to fetch documents")
@@ -818,7 +818,7 @@ const InvestmentOpportunitiesContent = () => {
       e?.stopPropagation()
       try {
         const token = getToken()
-        const response = await fetch(`http://192.168.100.30:5000/api/documents/${property.id}`, {
+        const response = await fetch(`/documents/${property.id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
 
@@ -890,10 +890,12 @@ const InvestmentOpportunitiesContent = () => {
   )
 
   // View document
-  const handleViewDocument = useCallback((url) => {
-    const fileUrl = `http://192.168.100.30:5000${url}`
-    window.open(`https://docs.google.com/gview?url=${fileUrl}&embedded=true`, "_blank")
-  }, [])
+const handleViewDocument = useCallback((url) => {
+  const baseURL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+  const fileUrl = `${baseURL}${url}`;
+  window.open(`https://docs.google.com/gview?url=${fileUrl}&embedded=true`, "_blank");
+}, []);
+
 
   // Open owner details
   const openOwnerDetails = useCallback(
@@ -901,7 +903,7 @@ const InvestmentOpportunitiesContent = () => {
       e?.stopPropagation()
       try {
         const token = getToken()
-        const response = await fetch(`http://192.168.100.30:5000/api/owner/${owner_id}`, {
+        const response = await fetch(`/owner/${owner_id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -934,7 +936,7 @@ const InvestmentOpportunitiesContent = () => {
       e?.stopPropagation()
       try {
         const token = getToken()
-        const response = await fetch("http://192.168.100.30:5000/api/watchlist/add", {
+        const response = await fetch("/watchlist/add", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

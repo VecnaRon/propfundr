@@ -70,7 +70,7 @@ const AdminApprovalPanel = () => {
   const fetchKYCApplications = async () => {
     try {
      const token = sessionStorage.getItem("token");
-      const response = await axios.get("http://192.168.100.30:5000/api/admin/kyc-submissions", {
+      const response = await axios.get("/admin/kyc-submissions", {
         headers: { Authorization: `Bearer ${token}` },
       })
       setApplications(response.data)
@@ -91,7 +91,7 @@ const AdminApprovalPanel = () => {
     try {
      const token = sessionStorage.getItem("token");
       const response = await axios.post(
-        "http://192.168.100.30:5000/api/admin/kyc-update",
+        "/admin/kyc-update",
         { id: Number(id), status: newStatus }, // Ensure ID is a number
         { headers: { Authorization: `Bearer ${token}` } },
       )
